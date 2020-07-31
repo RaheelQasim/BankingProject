@@ -4,3 +4,9 @@ create table Users(UserID int primary key Identity(1000,1), FirstName nvarchar(3
 FathersName nvarchar(30), DOB Date, PermanentAddress nvarchar(200) not null, CuurentAddress nvarchar(200) not null, OccupationType nvarchar(30), SourceofIncome nvarchar(20),AnnualSalary float, DebitCardOpted binary, NetBankingOpted binary, Locked binary, approved binary)
 
 create table Benefeciary(BeneficiaryID int IDENTITY(1,1) primary key, UserID int references Users(UserID), BeneficiaryAccountNumber Bigint) 
+
+create table NetBanking(NetbankingID int primary key,UserID int references Users(Userid),Password nvarchar(20) not null)
+
+create table Transactions(TransactionID int primary key,UserID int references Users(Userid), Type nvarchar(20) not null, Date Date not null,Amount float(6) not null)
+
+create table DebitCard(DebitCardNumber Bigint primary key,UserID int references Users(Userid), CVV smallint not null,DateOfIssue Date not null, DateOfExpiry Date not null,PIN int not null)
