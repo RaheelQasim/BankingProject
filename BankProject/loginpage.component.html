@@ -1,0 +1,39 @@
+<div class="alert alert-danger">
+    <form [formGroup]="myForm">
+        <div>
+        <label>User ID-</label> 
+        <input type="text" class="form-control" formControlName="username">
+        <p class="alert alert-danger" *ngIf="username.touched && username.invalid">
+            <span class="alert alert-danger" *ngIf="username.errors.required">Name field is required!</span>
+            <span class="alert alert-danger" *ngIf="username.errors.minlength">Minimum length error</span>
+        </p>
+        </div>
+        <br/>
+        
+        <div>
+        <label>Password-</label> 
+        <input type="password" class="form-control" formControlName="password">
+        <p class="alert alert-danger" *ngIf="password.touched && password.invalid">
+            <span class="alert alert-danger" *ngIf="password.errors.required">Password field is required!</span>
+        </p>
+        </div>
+        <br/>
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+        
+        <button (click)="checkpassword()" style="font-size: x-large;" class="btn btn-primary">Log In</button> 
+    </form>
+</div>
+<div class="form-control" *ngIf="welcome">
+    <span class="alert alert-danger" >Welcome!</span>
+    Welcome!
+</div>
+<div class="form-control" *ngIf="wrongcredentials">
+    <span class="alert alert-danger" >Incorrect username/password, please try again!</span>
+</div>
+
+<div>
+<p>Register for Internet Banking--> <a href="linkforInternetBankingRegister">Register Here!</a></p>
+<p> <a href="forgotUSERIDlink">Forgot User ID?</a></p>
+<p><a href="forgotpasswordlink">Forgot Password?</a></p>
+</div>
+<router-outlet></router-outlet>
