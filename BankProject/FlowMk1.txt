@@ -1,0 +1,66 @@
+admindecision table-
+userID (ideally string before @ in the emailID)
+account number
+approved status
+
+admin home page after logging into admin acc-
+the window will display all tempuserIDs and an link to EDIT
+that edit link will only contain textbox to convert the approvedtstatus which is initially 0 to 1 and changes will 
+reflect in the register table also.
+save changes button
+link to go back to main admin page
+
+after admin makes approvedstatus to 1, all details will get added to USER table
+
+track account status:
+window will contain textbox for service number (that is generated after submitting the register form) and submit button,
+approved status from register table will get printed(approved/not approved) after clicking submit button
+link to go back to home page
+
+HOMEPAGE:
+contains 3 main links
+1.login as admin
+2. login as user
+3. track account status
+
+LOGIN page:
+contains 3 main links, 
+1. login using userID and login pwd from USER table
+2. Register for NetBanking
+3.Create savings account
+4. forgot UserID
+5.Forgot password
+
+
+register table-(create savings account link's form data will be stored here)
+userID
+all register form details
+approvedstatus
+service number-given to user immediately after registering(clicking submit button) which will be used to track the status of the account
+
+register for NetBanking page-
+layout is as provided in the case study, no changes
+will store the Login pwd and transaction pwd into the users table
+(for those who have not opted for internet banking, the users table entry for those users will be NULL/0)
+
+users table-(entries into this table will be made only after making approved status to 1)
+account number
+all details from register table
+tempuserID is now UserID
+approved status
+account number
+debitcard required(yes)-card number, validity date,CVV,ATM PIN
+(for those who did not opt for debit card, all entries will be NULL/0)
+netbanking required(yes)-Login pwd, transaction pwd
+(for those who did not opt for netbanking, all entries will be NULL/0)
+balance
+date of opening
+
+transactions table-(will contain the following columns)
+transaction ID
+user ID
+account number
+type-neft,rtgs,imps
+amount 
+vendor
+date
