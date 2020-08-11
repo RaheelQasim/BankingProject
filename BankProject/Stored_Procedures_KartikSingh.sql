@@ -131,13 +131,3 @@ as begin
 	end
 go
 
-select * from Beneficiary
-select * from Users
-select * from Account
-select * from Transactions
-update Account
-set Locked=1 
-where AccountNumber=500000000
-
-
-delete from Beneficiary
