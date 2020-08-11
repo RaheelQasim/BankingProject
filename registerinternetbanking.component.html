@@ -1,0 +1,64 @@
+<div class="alert alert-danger">
+    <form [formGroup]="myRegisterForm">
+        <div>
+        <label>Account Number-</label> 
+        <input type="text" class="form-control" formControlName="accountnumber">
+        <p class="alert alert-danger" *ngIf="accountnumber.touched && accountnumber.invalid">
+            <span class="alert alert-danger" *ngIf="accountnumber.errors.required">Account Number field is required!</span>
+        </p>
+        </div>
+        <br/>        
+        <div>
+        <label>Set Login Password-</label> 
+        <input type="password" class="form-control" formControlName="password">
+        <p class="alert alert-danger" *ngIf="password.touched && password.invalid">
+            <span class="alert alert-danger" *ngIf="password.errors.required">Password field is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+            <label>Confirm Login Password-</label> 
+            <input type="password" class="form-control" formControlName="confirmpassword">
+            <p class="alert alert-danger" *ngIf="confirmpassword.touched && confirmpassword.invalid">
+                <span class="alert alert-danger" *ngIf="confirmpassword.errors.required">Password field is required!</span>
+            </p>
+        </div>
+        <br/>
+        <div>
+            <label>Set Transaction Password-</label> 
+            <input type="password" class="form-control" formControlName="transactionpwd">
+            <p class="alert alert-danger" *ngIf="transactionpwd.touched && transactionpwd.invalid">
+                <span class="alert alert-danger" *ngIf="transactionpwd.errors.required">Password field is required!</span>
+            </p>
+        </div>
+        <br/>
+        <div>
+            <label>Confirm Transaction Password-</label> 
+            <input type="password" class="form-control" formControlName="confirmtpwd">
+            <p class="alert alert-danger" *ngIf="confirmtpwd.touched && confirmtpwd.invalid">
+                <span class="alert alert-danger" *ngIf="confirmtpwd.errors.required">Password field is required!</span>
+            </p>
+        </div>
+        <br/>
+        <div>
+            <label>Enter OTP-</label> 
+            <input type="password" class="form-control" formControlName="OTP">
+            <p class="alert alert-danger" *ngIf="OTP.touched && OTP.invalid">
+                <span class="alert alert-danger" *ngIf="OTP.errors.required">OTP is required!</span>
+            </p>
+        </div>
+        <br/>
+        <button (click)="checkpassword()" style="font-size: x-large;" class="btn btn-success">Submit</button> 
+    </form>
+</div>
+<div class="form-control" *ngIf="submitstatus">
+    <span class="alert alert-danger" >Submitted!</span>
+</div>
+
+<div class="form-control">
+    <p><a href="">Back to Login Page</a></p>
+</div>
+
+
+
+
