@@ -1,0 +1,32 @@
+export class Register
+{
+    title:string;
+    firstname:string;
+    middlename:string;
+    lastname:string;
+    fathername:string;
+    mobile:number;
+    email:string;
+    aadhar:number;
+    dob:Date;
+    address1:string;
+    address2:string;
+    landmark:string;
+    state:string;
+    city:string;
+    pincode:number;
+    address1p:string;
+    address2p:string;
+    landmarkp:string;
+    statep:string;
+    cityp:string;
+    pincodep:number;
+    occtype:string;
+    sourceincome:string;
+    grossincome:number;
+    optdebitcard:boolean;
+    tnc:boolean;
+    constructor(){
+        this.tnc=false;
+    }
+}

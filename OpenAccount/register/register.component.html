@@ -1,0 +1,159 @@
+<br>
+<br>
+<div id="heads1" class="alert alert-info">
+    <h3>Open A Savings Account</h3>
+</div>
+<br>
+<br>
+<div id="heads2" class="alert alert-dark">
+    <h6>Personal Details</h6>
+</div>
+<br>
+<br>
+<form [formGroup]="myForm">
+    <label>Title</label>
+    <span id="mandatory">*</span>
+    <select name="title" class="form-control" formControlName="titles">
+        <option value="ms">Ms.</option>
+        <option value="mr">Mr.</option>
+        <option value="mrs">Mrs.</option>
+    </select>
+    <p class="alert alert-danger" *ngIf="titles.touched && titles.invalid">
+      <span class="alert alert-danger" *ngIf="titles.errors.required">Please enter your title</span>
+    </p>
+    <br>
+    <label>First Name</label>
+    <span id="mandatory">*</span>
+    <input type="text" class="form-control" formControlName="fname">
+    <p class="alert alert-danger" *ngIf="fname.touched && fname.invalid">
+      <span class="alert alert-danger" *ngIf="fname.errors.required">Please enter your First Name</span>
+    </p>
+    <br>
+    <label>Middle Name</label>
+    <input type="text" class="form-control" formControlName="mname">
+    <br>
+    <label>Last Name</label>
+    <span id="mandatory">*</span>
+    <input type="text" class="form-control" formControlName="lname">
+    <p class="alert alert-danger" *ngIf="lname.touched && lname.invalid">
+      <span class="alert alert-danger" *ngIf="lname.errors.required">Please enter your Last Name</span>
+    </p>
+    <br>
+    <label>Father's Name</label>
+    <span id="mandatory">*</span>
+    <input type="text" class="form-control" formControlName="faname">
+    <p class="alert alert-danger" *ngIf="faname.touched && faname.invalid">
+      <span class="alert alert-danger" *ngIf="faname.errors.required">Please enter your Father's Name</span>
+    </p>
+    <br>
+    <label>Mobile Number</label>
+    <span id="mandatory">*</span>
+    <input type="number" class="form-control" formControlName="mob">
+    <p class="alert alert-danger" *ngIf="mob.touched && mob.invalid">
+      <span class="alert alert-danger" *ngIf="mob.errors.required">Please enter your Mobile Number</span>
+      <span class="alert alert-danger" *ngIf="mob.errors.min">Mobile number should be of at least 10 digits</span>
+    </p>
+    <br>
+    <label>Email ID</label>
+    <input type="text" class="form-control" formControlName="mail">
+    <br>
+    <label>Aadhar Card Number</label>
+    <span id="mandatory">*</span>
+    <input type="number" class="form-control" formControlName="adh">
+    <p class="alert alert-danger" *ngIf="adh.touched && adh.invalid">
+      <span class="alert alert-danger" *ngIf="adh.errors.required">Please enter your Aadhar Card Number</span>
+      <span class="alert alert-danger" *ngIf="adh.errors.min">Aadhar number should be of at least 12 digits</span>
+    </p>
+    <br>
+    <label>Date Of Birth</label>
+    <span id="mandatory">*</span>
+    <input type="date" class="form-control" formControlName="dofb">
+    <p class="alert alert-danger" *ngIf="dofb.touched && dofb.invalid">
+      <span class="alert alert-danger" *ngIf="dofb.errors.required">Please enter your Date of Birth</span>
+    </p>
+    <br>
+    <p id="resid">Residential Address</p>
+    <br>
+    <label>a) Address Line 1</label>
+    <span id="mandatory">*</span>
+    <input type="text" class="form-control" formControlName="addr1">
+    <p class="alert alert-danger" *ngIf="addr1.touched && addr1.invalid">
+      <span class="alert alert-danger" *ngIf="addr1.errors.required">Please enter your address</span>
+    </p>
+    <br>
+    <label >b) Address Line 2</label>
+    <span id="mandatory">*</span>
+    <input type="text" class="form-control" formControlName="addr2">
+    <p class="alert alert-danger" *ngIf="addr2.touched && addr2.invalid">
+      <span class="alert alert-danger" *ngIf="addr2.errors.required">Please enter your address</span>
+    </p>
+    <br>
+    <label>c) Landmark</label>
+    <input type="text" class="form-control" formControlName="lm">
+    <br>
+    <label>d) State</label>
+    <span id="mandatory">*</span>
+    <input type="text" class="form-control" formControlName="st">
+    <p class="alert alert-danger" *ngIf="st.touched && st.invalid">
+      <span class="alert alert-danger" *ngIf="st.errors.required">Please enter your state name</span>
+    </p>
+    <br>
+    <label>e) City</label>
+    <span id="mandatory">*</span>
+    <input type="text" class="form-control" formControlName="ci">
+    <p class="alert alert-danger" *ngIf="ci.touched && ci.invalid">
+      <span class="alert alert-danger" *ngIf="ci.errors.required">Please enter your city name</span>
+    </p>
+    <br>
+    <label>f) Pincode</label>
+    <span id="mandatory">*</span>
+    <input type="number" class="form-control" formControlName="pin">
+    <p class="alert alert-danger" *ngIf="pin.touched && pin.invalid">
+      <span class="alert alert-danger" *ngIf="pin.errors.required">Please enter your Pincode</span>
+    </p>
+    <br>
+    <p id="occdet">Occupation Details</p>
+    <br>
+    <label>a)Occupation Type</label>
+    <span id="mandatory">*</span>
+    <select name="occupation" class="form-control" formControlName="occ">
+      <option value="Salaried" selected>Salaried</option>
+      <option value="se">Self Employed</option>
+      <option value="bus">Business</option>
+      <option value="ret">Retired</option>
+      <option value="stu">Student</option>
+  </select>
+  <p class="alert alert-danger" *ngIf="occ.touched && occ.invalid">
+    <span class="alert alert-danger" *ngIf="occ.errors.required">Please enter your Occupation Type</span>
+  </p>
+  <br>
+  <label>b) Source of Income</label>
+  <span id="mandatory">*</span>
+  <input type="text" class="form-control" formControlName="source">
+    <p class="alert alert-danger" *ngIf="source.touched && source.invalid">
+      <span class="alert alert-danger" *ngIf="source.errors.required">Please enter your Source of Income</span>
+    </p>
+    <br>
+    <label>c) Gross Annual Income</label>
+    <span id="mandatory">*</span>
+  <input type="text" class="form-control" formControlName="gross">
+    <p class="alert alert-danger" *ngIf="gross.touched && gross.invalid">
+      <span class="alert alert-danger" *ngIf="gross.errors.required">Please enter your Gross Annual Income</span>
+    </p>
+    <br>
+    Do You want to a Debit Card?
+    <input type="checkbox" name="debit" id="debit" (click)="optDebit()"/>Yes
+    <br>
+    <br>
+    <input type="checkbox" name="samechecks" id="samechecks"/>Opt for NetBanking
+    <br>
+    <br>
+    <input type="checkbox" name="agree" id="agree" formControlName="agree" (click)="agreed()"/>I Agree
+    <p class="alert alert-danger" *ngIf="agree.touched && agree.invalid">
+      <span class="alert alert-danger" *ngIf="agree.errors.required">Please click "I Agree" to accept our Terms and Conditions</span>
+    </p>
+    <br>
+    <br>
+    <button (click)="registerUser()" class="btn btn-primary">SUBMIT</button>
+    <router-outlet></router-outlet>
+</form>
