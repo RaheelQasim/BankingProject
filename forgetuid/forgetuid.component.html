@@ -1,0 +1,33 @@
+<h1 style="text-align:center">Forgot User ID</h1>
+<div>
+    <h2>Enter the Details:</h2>
+</div>
+<br/>
+<br/>
+<div style="text-align: center;">
+    <label>
+        Enter Account No:
+        <input type="text" pattern="[0-9]*" maxlength="16" [formControl]="AccNo" >
+    </label>
+    <br/>
+    <br/>
+
+    <br/>
+    <label>
+        Enter OTP:
+        <input type="text" pattern="[0-9]*" maxlength="6" [formControl]="otp">
+        <!--<input id="partitioned" type="text" maxlength="6" [formControl]="otp"/>-->
+    </label>
+    <br/>
+    <br/><br/>
+
+
+    
+
+
+<div style="text-align: center;">
+    <button (click)="proceed()">Proceed</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button (click)="back()">Back</button>
+</div>
+

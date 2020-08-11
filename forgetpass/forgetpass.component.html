@@ -1,0 +1,28 @@
+<div>
+    <h2>Enter the Details:</h2>
+</div>
+<br/>
+<br/>
+<div style="text-align: center;">
+    <label>
+        Enter User ID:
+        <input type="text" pattern="[0-9]*" maxlength="16" [formControl]="UserID">
+    </label>
+    <br/>
+    <br/>
+
+    <br/>
+    <label>
+        Enter OTP:
+        <input type="text" pattern="[0-9]*" maxlength="6" [formControl]="otp">
+    </label>
+    <br/>
+    <br/><br/>
+</div>
+<div style="text-align: center;">
+    <button (click)="proceed()">Proceed</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button (click)="back()">Back</button>
+</div>
+
+
